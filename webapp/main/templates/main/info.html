@@ -1,0 +1,21 @@
+{% extends "main/base.html" %} 
+{% load static %}
+
+{% block body %}
+<section id="info">
+  <p class="description">
+    We use a pretrained Convolution Neural Network model to be able
+    to make server-side predictions for the classification of chest X-ray images
+    to having or not having Pneumonia
+  </p>
+  <h3 class="info-title">Examples</h3>
+  <section class="info-display">
+    <section class="box">
+      <img src="{% static 'normal1.jpeg' %}" alt="normal chest x-ray" />
+    </section>
+    <section class="box">
+      <img src="{% static 'pneumonia2.jpeg' %}" alt="pneumonic chest x-ray" />
+    </section>
+  </section>
+</section>
+{% endblock %}

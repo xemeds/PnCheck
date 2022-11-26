@@ -1,0 +1,11 @@
+{% extends "api/base.html" %}
+
+{% block body %}
+<section id="auth">
+	<form method="post" class="auth-form">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="auth-submit">Login</button>
+	</form>
+</section>
+{% endblock %}

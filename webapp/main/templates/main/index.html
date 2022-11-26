@@ -1,0 +1,54 @@
+{% extends "main/base.html" %} 
+
+{% block body %} 
+
+<section id="home">
+	{% if classification %}
+	<section class="result" style="margin-bottom: 0.5rem">
+		<h4>Classification: {{ classification }}</h4>
+		<h4>Pneumonia Probability: {{ probability }}</h4>
+	</section> 
+	{% endif %}
+	<form method="POST" enctype="multipart/form-data" class="form">
+		{% csrf_token %}
+		<input type="file" name="image_field" accept="image/*" required style="display: none;" class="myFile">
+		<button class="uploader" type="button">Click to Upload File</button>
+		<section class="view">
+			<img src="#" alt="display" id="display-image" style="display: none; width: 100%; height: 100%;object-fit: cover;"/>
+		</section>
+		<button type="submit" class="button" style="width: 100%;">Submit</button>
+	</form>
+
+</section>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const uploader = document.querySelector('.uploader');
+		const myFile = document.querySelector('.myFile');
+		const imageDisplay = document.getElementById('display-image');
+
+		uploader.addEventListener('click', function() {
+			myFile.click();
+		});
+
+		myFile.addEventListener('change', function(e) {
+			const file = e.target.files[0];
+			const fileURL = URL.createObjectURL(file);
+
+			imageDisplay.setAttribute('src', fileURL);
+			imageDisplay.style.display = 'block';
+		});
+	});
+</script>
+
+{% endblock %}
+
+<!-- <form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<input type="file" name="image_field" accept="image/*" required>
+	<input type="submit" value="Submit">
+</form> -->
+
+<!-- <section class="result">
+		<h4>Classification:</h4>
+		<h4>Pneumonia Probability:</h4>
+	</section> -->

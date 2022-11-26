@@ -1,0 +1,48 @@
+{% extends "api/base.html" %}
+
+{% block body %}
+<style>
+  .snippets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .snippet {
+    background-color: #ccc;
+    border-radius: 0.5rem;
+  }
+</style>
+<section id="api">
+  <p class="description">
+    Our API provides an endpoint that can be connected to by healthcare facilities to facilitate easy
+    diagnosis of Pneumonia based on patient X-rays.
+  </p>
+  <br>
+  <h3>Documentation</h3>
+  <p class="description">
+    Check if the API is working:
+  </p>
+  <section class="snippets">
+    <pre class="snippet">
+      <code>
+        https://api-pncheck.azurewebsites.net
+      </code>
+    </pre>
+  </section>
+  <p class="description">
+    To send a image to predict, send a POST request to the URL below with the given data:
+  </p>
+  <section class="snippets">
+    <pre class="snippet">
+      <code>
+        https://api-pncheck.azurewebsites.net/predict
+
+        key: w1pOwkVlWbxVtsnxaHHDb6AlbaDkCRbb
+        image: chest-x-ray.png
+      </code>
+    </pre>
+  </section>
+</section>
+{% endblock %}

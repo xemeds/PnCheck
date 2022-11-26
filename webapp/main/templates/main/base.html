@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'favicon.ico' %}"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+    <title>
+      PnCheck | {% block title %} {% endblock %}
+    </title>
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="inner">
+        <section class="start">
+					<img src="{% static 'pncheck-transparent.png' %}" alt="pncheck-logo" height="200"/>
+          <!-- <h3 class="title">PnCheck</h3> -->
+          <section style="position: relative">
+            <h6 class="subtitle">
+              Detecting Pneumonia in Chest X-rays
+            </h6>
+            <nav class="navbar">
+              <ul class="items">
+                <li class="item">
+                  <a href="{% url 'main_index' %}" class="link">Home</a>
+                </li>
+                <li class="item">
+                  <a href="{% url 'main_info' %}" class="link">Info</a>
+                </li>
+                <li class="item">
+                  <a href="{% url 'api_docs' %}" class="link">Our API</a>
+                </li>
+                <!-- <li class="item">
+                  <a href="/register.html" class="link">Register</a>
+                </li>
+                <li class="item">
+                  <a href="/login.html" class="link">Login</a>
+                </li> -->
+              </ul>
+            </nav>
+          </section>
+          <section class="content" id="{{ page }}">
+            {% block body %}{% endblock %}
+          </section>
+        </section>
+        <footer class="footer">
+          <section class="footer-start">
+            <h3>Medical Advice Disclaimer</h3>
+            <h4>DISCLAIMER: THIS WEBSITE DOES NOT PROVIDE MEDICAL ADVICE</h4>
+            <p>
+              The information, including but not limited to, text, graphics,
+              images and other material contained on this website are for
+              informational purposes only. No material on this site is intended to
+              be a substitute for professional medical advice, diagnosis or
+              treatment. Always seek the advice of your physician or other
+              qualified health care provider with any questions you may have
+              regarding a medical condition or treatment and before undertaking a
+              new health care regimen, and never disregard professional medical
+              advice or delay in seeking it because of something you have read on
+              this website.
+            </p>
+          </section>
+          <p class="copyright">&copy; 2022. PnCheck</p>
+        </footer>
+      </section>
+    </main>
+  </body>
+
+</html>
+

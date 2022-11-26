@@ -1,0 +1,33 @@
+{% extends "api/base.html" %}
+
+{% block body %}
+<style>
+  .snippets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .snippet {
+    background-color: #ccc;
+    border-radius: 0.5rem;
+  }
+</style>
+
+<section>
+  <p class="description">
+    Our API provides an endpoint that can be connected to by healthcare facilities to facilitate easy diagnosis of Pneumonia based on patient X-rays.
+  </p>
+  <br>
+  <h3>API Key</h3>
+  <section class="snippets">
+    <pre class="snippet">
+      <code>
+        {{ request.user.api_key.key }}
+      </code>
+    </pre>
+  </section>
+</section>
+
+{% endblock %}
