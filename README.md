@@ -8,11 +8,12 @@ Pneumonia detection in chest X-rays - Imagine Cup 2022 World Finalists.
 - [Back End API](https://github.com/xemeds/PnCheck/tree/main/back-end-api)
 - [Pretrained Model](https://github.com/xemeds/PnCheck/tree/main/model)
 
-<video controls src="https://raw.githubusercontent.com/xemeds/PnCheck/main/files/demo.mp4" muted="false"></video>
+Check [Files](https://github.com/xemeds/PnCheck/tree/main/files) for more details.
+
 
 ## Members
 
-[https://github.com/xemeds](https://github.com/xemeds)
-[https://github.com/margaiwangara](https://github.com/margaiwangara)
-[https://github.com/esthicodes](https://github.com/esthicodes)
-[https://github.com/yusufadell](https://github.com/yusufadell)
+- [https://github.com/xemeds](https://github.com/xemeds)
+- [https://github.com/margaiwangara](https://github.com/margaiwangara)
+- [https://github.com/esthicodes](https://github.com/esthicodes)
+- [https://github.com/yusufadell](https://github.com/yusufadell)
